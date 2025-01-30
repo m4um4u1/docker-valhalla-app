@@ -19,3 +19,17 @@ Runs the app in hot-reload mode on [http://localhost:3000](http://localhost:3000
 Builds and bundles the minified app for production to the `./build` folder.
 
 Your app is ready to be deployed!
+
+## Docker modifications made in this fork
+
+You can now set environment variables **at runtime** by passing them to the Docker container, instead of hardcoding them at build time. The following variables are now supported:
+
+```env
+REACT_APP_VALHALLA_URL=https://valhalla1.openstreetmap.de
+REACT_APP_NOMINATIM_URL=https://nominatim.openstreetmap.org
+REACT_APP_TILE_SERVER_URL="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+REACT_APP_CENTER_COORDS="52.51831,13.393707"
+# southwest corner, northeast corner
+REACT_APP_MAX_BOUNDS="-90,-1e7,90,1e7"
+
+
